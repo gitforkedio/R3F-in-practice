@@ -11,9 +11,9 @@ export function Car() {
   // https://sketchfab.com/3d-models/low-poly-car-muscle-car-2-ac23acdb0bd54ab38ea72008f3312861
   let mesh = useLoader(
     GLTFLoader,
-    process.env.PUBLIC_URL + "/models/car.glb"
+    process.env.PUBLIC_URL + "/models/car-old.glb"
   ).scene;
-  
+
   const position = [-1.5, 0.5, 3];
   const width = 0.15;
   const height = 0.07;
@@ -27,7 +27,7 @@ export function Car() {
       mass: 150,
       position,
     }),
-    useRef(null),
+    useRef(null)
   );
 
   const [wheels, wheelInfos] = useWheels(width, height, front, wheelRadius);
@@ -38,7 +38,7 @@ export function Car() {
       wheelInfos,
       wheels,
     }),
-    useRef(null),
+    useRef(null)
   );
 
   useControls(vehicleApi, chassisApi);
